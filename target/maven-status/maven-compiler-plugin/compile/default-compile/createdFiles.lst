@@ -1,0 +1,10 @@
+entity\Catagorymaster.class
+bean\productManageBean.class
+ejb\productBeanLocal.class
+com\mycompany\crudinrestexam\JakartaRestConfiguration.class
+bean\productManageBean$1.class
+entity\Productmaster.class
+bean\productManageBean$2.class
+client\productClient.class
+ejb\productBean.class
+com\mycompany\crudinrestexam\resources\JakartaEE8Resource.class

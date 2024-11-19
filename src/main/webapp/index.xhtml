@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Java is best</title>
+    </h:head>
+    <h:body>
+        <center>
+            <h:form>
+                <h:commandButton value="add product" action="#{productManageBean.redirectAddproduct}" />
+            </h:form>
+            <h1>Product List</h1>
+           
+            <f:view>
+
+
+                <h:form>
+                    <h1><h:outputText value="List"/></h1>
+                    <h:dataTable value="#{productManageBean.products}" var="item">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Pid"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ProductName"/>
+                            </f:facet>
+                            <h:outputText value="#{item.productName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Price"/>
+                            </f:facet>
+                            <h:outputText value="#{item.price}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Cid"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Edit"/>
+                            </f:facet>
+                            <h:commandLink value="edit" action="#{productManageBean.redirectEditproduct()}" >
+                                <f:setPropertyActionListener value="#{item}" target="#{productManageBean.current}" />
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </f:view>
+
+        </center>
+    </h:body>
+</html>
